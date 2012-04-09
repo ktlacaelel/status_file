@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "lib/status_file.rb",
+    "status_file.gemspec",
     "test/helper.rb",
     "test/test_status_file.rb"
   ]
