@@ -1,16 +1,26 @@
 = status_file
 
-Description goes here.
+Store a programs status to a file.
 
-== Contributing to status_file
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
-* Fork the project.
-* Start a feature/bugfix branch.
-* Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+== Install
+
+    gem install status_file
+
+== Sample
+
+test_status_file.rb
+
+    status = StatusFile.new '/tmp/status'
+    status.send "Initialized on: #{Time.now}"
+    status.send "Working... #{(1..100).to_a.shuffle.first}%"
+    status.update
+
+== Output
+
+    kazu@utopia:~/dev/git/breeze$ ruby test_status_file.rb
+    kazu@utopia:~/dev/git/breeze$ cat /tmp/status
+    Initialized on: Mon Apr 09 16:41:50 -0500 2012
+    Working... 68%
 
 == Copyright
 
