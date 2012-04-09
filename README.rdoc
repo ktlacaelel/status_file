@@ -10,6 +10,9 @@ Store a programs status to a file.
 
 test_status_file.rb
 
+    require 'rubygems'
+    require 'status_file'
+
     status = StatusFile.new '/tmp/status'
     status.send "Initialized on: #{Time.now}"
     status.send "Working... #{(1..100).to_a.shuffle.first}%"
